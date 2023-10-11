@@ -11,8 +11,8 @@ end
 
 ### ls
 function ls
-    if command -sq lsd
-        lsd $argv
+    if command -sq eza
+        eza -1 --icons $argv
     else
         bash -c ls $argv
     end
@@ -24,6 +24,14 @@ end
 
 function la
     ll -a $argv
+end
+
+function tree
+    if command -sq eza
+        ls -T $argv
+    else
+        bash -c tree $argv
+    end
 end
 
 #

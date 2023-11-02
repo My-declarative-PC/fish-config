@@ -1,0 +1,1 @@
+/var/home/timofey/gits/dotfiles/fish

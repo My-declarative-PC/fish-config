@@ -50,5 +50,9 @@ if command -sq zoxide
     zoxide init --cmd cd fish | source
 end
 
+if command -sq fzf
+    fzf --fish | source
+end
+
 # Created by `pipx` on 2023-10-24 13:54:33
 set PATH $PATH /home/timofey/.local/bin

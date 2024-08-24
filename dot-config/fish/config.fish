@@ -35,9 +35,12 @@ function tree
 end
 
 #
-# Vatibles
+# Varibles
 #
 set -x SSH_AUTH_SOCK $XDG_RUNTIME_DIR/ssh-agent.socket
+set -x HELIX_RUNTIME /var/lib/helix/runtime
+set -x EDITOR /usr/bin/hx
+set PATH $PATH ~/.local/bin
 
 #
 # Initializations
@@ -53,6 +56,3 @@ end
 if command -sq fzf
     fzf --fish | source
 end
-
-# Created by `pipx` on 2023-10-24 13:54:33
-set PATH $PATH /home/timofey/.local/bin

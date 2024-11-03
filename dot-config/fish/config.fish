@@ -35,14 +35,6 @@ function tree
 end
 
 #
-# Varibles
-#
-set -x SSH_AUTH_SOCK $XDG_RUNTIME_DIR/ssh-agent.socket
-set -x EDITOR /usr/bin/hx
-set -x HELIX_RUNTIME /var/lib/helix/runtime
-set PATH $PATH ~/.local/bin
-
-#
 # Initializations
 #
 if command -sq starship

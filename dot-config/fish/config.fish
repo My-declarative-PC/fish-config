@@ -3,6 +3,25 @@ function fish_greeting
         clear
         fastfetch
     end
+
+    if status is-interactive
+        import_bash_env
+    end
+end
+
+function import_bash_env
+    set -l skip_vars PWD SHLVL _ OLDPWD
+
+    bash -c 'source /etc/profile.d/custom_profile.sh && env' | while read -l line
+        if string match -q '*=*' -- $line
+            set -l kv (string split -m 1 '=' $line)
+            if test (count $kv) -eq 2
+                if not contains $kv[1] $skip_vars
+                    set -gx $kv[1] $kv[2]
+                end
+            end
+        end
+    end
 end
 
 #

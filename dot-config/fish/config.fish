@@ -75,3 +75,7 @@ end
 if command -sq fzf
     fzf --fish | source
 end
+
+if command -sq direnv
+    direnv hook fish | source
+end

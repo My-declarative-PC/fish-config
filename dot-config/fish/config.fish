@@ -28,6 +28,14 @@ end
 # Aliases
 #
 
+function lsusb
+    if command -sq cyme
+        cyme $argv
+    else
+        bash -c lsusb $argv
+    end
+end
+
 ### ls
 function ls
     if command -sq eza

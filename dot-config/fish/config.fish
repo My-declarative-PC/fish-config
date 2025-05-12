@@ -12,7 +12,7 @@ end
 function import_bash_env
     set -l skip_vars PWD SHLVL _ OLDPWD
 
-    bash -c 'source ~/profile.d/custom_profile.sh && env' | while read -l line
+    bash -c 'source ~/.profile.d/custom_profile.sh && env' | while read -l line
         if string match -q '*=*' -- $line
             set -l kv (string split -m 1 '=' $line)
             if test (count $kv) -eq 2

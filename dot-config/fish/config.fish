@@ -12,7 +12,7 @@ end
 function import_bash_env
     set -l skip_vars PWD SHLVL _ OLDPWD
 
-    bash -c 'source /etc/profile.d/custom_profile.sh && env' | while read -l line
+    bash -c 'source ~/profile.d/custom_profile.sh && env' | while read -l line
         if string match -q '*=*' -- $line
             set -l kv (string split -m 1 '=' $line)
             if test (count $kv) -eq 2
@@ -33,6 +33,14 @@ function lsusb
         cyme $argv
     else
         bash -c lsusb $argv
+    end
+end
+
+function cat
+    if command -sq bat
+        bat $argv
+    else
+        bash -c cat $argv
     end
 end
 

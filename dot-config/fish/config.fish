@@ -103,3 +103,7 @@ end
 if command -sq direnv
     direnv hook fish | source
 end
+
+if command -sq atuin
+    atuin init fish | source
+end
